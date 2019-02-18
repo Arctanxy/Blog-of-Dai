@@ -1,0 +1,225 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: dalalaa读书日记
+subtitle: Machine Learning
+
+subtitle_desc: 日常学习记录
+
+# description: 日常学习记录
+keywords: 机器学习,深度学习,算法
+author: 
+  name: dalalaa
+  link: https://github.com/Arctanxy
+language: zh-cn
+timezone:
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+# url: http://yoursite.com
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# your blog favicon icon, support two ways: local and online. the local way need you to put the icon under  themes/hexo-theme-skapp/source/img directory
+favicon_ico: http://oo12ugek5.bkt.clouddn.com/blog/images/favicon.ico
+
+# blog logo icon in the upper left corner. support the local way and online way. 
+# logo: http://oo12ugek5.bkt.clouddn.com/images/logo-text-white.png
+
+
+# avatar
+# avatar: http://oo12ugek5.bkt.clouddn.com/images/qrcode.png
+# qrcode: http://oo12ugek5.bkt.clouddn.com/images/qrcode.png
+
+# page default cover
+default_cover: http://oo12ugek5.bkt.clouddn.com/images/default_cover.png
+
+# header background picture
+header_cover: http://oo12ugek5.bkt.clouddn.com/blog/images/banner-bg.jpg
+
+# 404 page background picture
+error_page_bg: http://oo12ugek5.bkt.clouddn.com/blog/images/dogs.jpg
+
+# page loading icon
+loader_img: http://oo12ugek5.bkt.clouddn.com/blog/images/loader.gif
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+  
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+  
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: material
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repo: git@github.com:Arctanxy/Arctanxy.github.io.git
+  branch: master
+
+# Sass
+node_sass:
+  outputStyle: nested
+  precision: 5
+  sourceComments: false
+
+# Autoprefixer
+autoprefixer:
+  exclude:
+    - '*.min.css'
+  browsers:
+    - 'last 2 versions'
+
+# Lunr
+lunr:
+  field: all
+  fulltext: false
+  path: assets/lunr/
+
+# filter_cleanup
+hfc_useref:
+  enable: true
+  concat: true
+
+hfc_html:
+  enable: true
+  exclude:
+
+hfc_css:
+  enable: true
+  exclude: 
+    - '*.min.css'
+
+hfc_js:
+  enable: true
+  mangle: true
+  exclude: 
+    - '*.min.js'
+
+hfc_img:
+  enable: false
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false
+
+hfc_favicons:
+  enable: false
+  src: img/blog-logo.png
+  target: img/
+  icons:
+    android: true
+    appleIcon: true
+    appleStartup: false
+    coast: false
+    favicons: true
+    firefox: false
+    opengraph: false
+    windows: true
+    yandex: false
+
+menu:
+  home: / 
+  archive: /archives
+  about: /about
+  search: /search
+
+# Google statistic
+google_statistic: UA-116821310-1
+
+# Gitalk
+gitalk:
+  enable: true    #是否开启Gitalk评论
+  clientID: b5175fd37a910cc9c95a                            #生成的clientID
+  clientSecret: 0a2b9fe2ca4fa87b93f1f09998e7c00b24aca448    #生成的clientSecret
+  repo: Arctanxy.github.io    #仓库名称
+  owner: Arctanxy    #github用户名
+  admin: Arctanxy
+  distractionFreeMode: true #是否启用类似FB的阴影遮罩
+
+# Math Equations Render Support
+math:
+  enable: true
+
+  # Default(true) will load mathjax/katex script on demand
+  # That is it only render those page who has 'mathjax: true' in Front Matter.
+  # If you set it to false, it will load mathjax/katex srcipt EVERY PAGE.
+  per_page: false
+
+  engine: mathjax
+  #engine: katex
+
+  # hexo-rendering-pandoc (or hexo-renderer-kramed) needed to full MathJax support.
+  mathjax:
+    # Use 2.7.1 as default, jsdelivr as default CDN, works everywhere even in China
+    cdn: //cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    # For newMathJax CDN (cdnjs.cloudflare.com) with fallback to oldMathJax (cdn.mathjax.org).
+    #cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+    # For direct link to MathJax.js with CloudFlare CDN (cdnjs.cloudflare.com).
+    #cdn: //cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML
+    # For automatic detect latest version link to MathJax.js and get from Bootcss.
+    #cdn: //cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
+
+  # hexo-renderer-markdown-it-plus (or hexo-renderer-markdown-it with markdown-it-katex plugin)
+  # needed to full Katex support.
+  katex:
+    # Use 0.7.1 as default, jsdelivr as default CDN, works everywhere even in China
+    cdn: //cdn.jsdelivr.net/npm/katex@0.7.1/dist/katex.min.css
+    # CDNJS, provided by cloudflare, maybe the best CDN, but not works in China
+    #cdn: //cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css
+    # Bootcss, works great in China, but not so well in other region
+    #cdn: //cdn.bootcss.com/KaTeX/0.7.1/katex.min.css
